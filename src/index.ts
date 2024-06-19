@@ -1,1 +1,2 @@
-console.log(1);
+import Button from './components/Button';
+export { Button };
