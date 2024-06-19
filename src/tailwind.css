@@ -1,0 +1,7 @@
+:root {
+  --primary: rgb(59, 130, 246);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
