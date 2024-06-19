@@ -17,7 +17,9 @@
   ],
   "scripts": {
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
-    "build:rollup": "rollup -c"
+    "build:rollup": "rollup -c",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [
     "ui",
@@ -35,8 +37,18 @@
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
+    "@chromatic-com/storybook": "1.5.0",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@storybook/addon-essentials": "^8.1.10",
+    "@storybook/addon-interactions": "^8.1.10",
+    "@storybook/addon-links": "^8.1.10",
+    "@storybook/addon-onboarding": "^8.1.10",
+    "@storybook/blocks": "^8.1.10",
+    "@storybook/builder-vite": "^8.1.10",
+    "@storybook/react": "^8.1.10",
+    "@storybook/react-vite": "^8.1.10",
+    "@storybook/test": "^8.1.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -44,6 +56,7 @@
     "autoprefixer": "^10.4.19",
     "eslint": "^9.5.0",
     "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
     "r": "^0.0.5",
@@ -53,12 +66,19 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
+    "storybook": "^8.1.10",
     "tailwindcss": "^3.4.4",
     "tslib": "^2.6.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1"
   },
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
