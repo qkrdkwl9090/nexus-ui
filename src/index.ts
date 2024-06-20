@@ -1,2 +1,4 @@
 import Button from './components/Button';
-export { Button };
+import Skeleton from './components/Skeleton';
+
+export { Button, Skeleton };
