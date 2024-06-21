@@ -7,7 +7,6 @@ export interface CheckboxProps {
   disabled?: boolean;
   id?: string;
   inputId?: string;
-  inputRef?: React.Ref<HTMLInputElement>;
   invalid?: boolean;
   name?: string;
   readOnly?: boolean;
@@ -17,9 +16,10 @@ export interface CheckboxProps {
   width?: string | number;
   height?: string | number;
   rounded?: boolean;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (
     {
       autoFocus = false,
@@ -28,7 +28,6 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
       disabled = false,
       id,
       inputId,
-      inputRef,
       invalid = false,
       name,
       readOnly = false,
@@ -37,11 +36,12 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
       unstyled = false,
       width = 20,
       height = 20,
-      rounded = false
+      rounded = false,
+      onChange
     },
     ref
   ) => {
-    const [internalChecked, setInternalChecked] = useState<boolean | undefined>(checked);
+    const [internalChecked, setInternalChecked] = useState<boolean>(checked || false);
     const internalInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -58,12 +58,24 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       if (readOnly) return;
+
+      const newChecked = e.target.checked;
+
       if (typeof checked === 'undefined') {
-        setInternalChecked(e.target.checked);
+        setInternalChecked(newChecked);
+      }
+
+      if (onChange) {
+        onChange(e);
       }
     };
 
-    useImperativeHandle(inputRef, () => internalInputRef.current as HTMLInputElement);
+    useImperativeHandle(ref, () => ({
+      ...internalInputRef.current!,
+      get checked() {
+        return internalInputRef.current?.checked ?? false;
+      }
+    }));
 
     const parseDimension = (dim: string | number) => (typeof dim === 'number' ? `${dim}px` : dim);
 
@@ -79,7 +91,11 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
 
     const boxClass = unstyled
       ? ''
-      : `flex items-center justify-center w-full h-full border ${internalChecked ? 'bg-blue-500' : 'bg-white'} ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} ${invalid ? 'border-red-500' : 'border-gray-300'} ${rounded ? 'rounded-md' : ''}`;
+      : `flex items-center justify-center w-full h-full border ${
+          internalChecked ? 'bg-blue-500' : 'bg-white'
+        } ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} ${
+          invalid ? 'border-red-500' : 'border-gray-300'
+        } ${rounded ? 'rounded-md' : ''}`;
 
     const svgSize = `calc(${parsedWidth} * 0.6)`;
 
@@ -102,7 +118,6 @@ const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
           className={boxClass}
           onClick={() => {
             if (disabled || readOnly) return;
-            setInternalChecked(!internalChecked);
             internalInputRef.current?.click();
           }}
         >
