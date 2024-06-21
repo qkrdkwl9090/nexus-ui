@@ -2,12 +2,13 @@ import React, { forwardRef } from 'react';
 
 export interface ButtonProps {
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   rounded?: boolean;
   severity?: 'primary' | 'success' | 'warning' | 'secondary' | 'info' | 'danger';
   size?: 'small' | 'medium' | 'large';
   raised?: boolean;
+  type: 'button' | 'submit' | 'reset';
   className?: string;
   icon?: React.ReactNode;
   outlined?: boolean;
@@ -43,6 +44,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       raised = false,
       className = '',
       icon,
+      type = 'button',
       outlined = false,
       unstyled = false,
       visible = true,
@@ -67,7 +69,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       : `${backgroundClass} ${borderClass} ${textColorClass} ${sizeClass} ${roundedClass} ${disabledClass} ${raisedClass} ${userClass}`.trim();
 
     return (
-      <button onClick={onClick} className={combinedClass} disabled={disabled} ref={ref}>
+      <button onClick={onClick} className={combinedClass} disabled={disabled} ref={ref} type={type}>
         {icon && <span className="mr-2">{icon}</span>}
         {label}
       </button>
