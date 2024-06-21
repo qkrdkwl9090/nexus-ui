@@ -7,6 +7,7 @@ export interface InputTextProps {
   className?: string;
   invalid?: boolean;
   keyfilter?: KeyFilterType;
+  placeholder?: string;
   size?: 'small' | 'medium' | 'large';
   tooltip?: string;
   unstyled?: boolean;
@@ -15,6 +16,7 @@ export interface InputTextProps {
   variant?: 'filled' | 'outlined';
   rounded?: boolean;
   onInput?: (event: React.FormEvent<HTMLInputElement>, validatePattern: boolean) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputText = forwardRef<HTMLInputElement, InputTextProps>(
@@ -26,12 +28,14 @@ const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       keyfilter,
       size = 'medium',
       tooltip,
+      placeholder,
       unstyled = false,
       validateOnly = false,
-      value,
+      value = '',
       variant = 'outlined',
       rounded = false,
-      onInput
+      onInput,
+      onChange
     },
     ref
   ) => {
@@ -87,7 +91,11 @@ const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
     const defaultClass = unstyled
       ? ''
-      : `form-input ${variant === 'outlined' ? 'border border-gray-300' : 'bg-gray-100'} ${invalid ? 'border-red-500' : ''} ${rounded ? 'rounded-md' : ''} ${sizeClass[size]} focus:outline-none focus:ring-2 focus:ring-primary-50 focus:border-transparent`;
+      : `form-input ${
+          variant === 'outlined' ? 'border border-gray-300' : 'bg-gray-100'
+        } ${invalid ? 'border-red-500' : ''} ${rounded ? 'rounded-md' : ''} ${
+          sizeClass[size]
+        } focus:outline-none focus:ring-2 focus:ring-primary-50 focus:border-transparent`;
     const combinedClass = `${defaultClass} ${className}`;
 
     return (
@@ -95,7 +103,9 @@ const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         ref={ref}
         className={combinedClass}
         value={internalValue}
+        placeholder={placeholder}
         onInput={handleInput}
+        onChange={onChange}
         title={tooltip}
         aria-invalid={invalid}
         autoFocus={autoFocus}
