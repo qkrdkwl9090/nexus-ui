@@ -12,8 +12,18 @@ export default {
       format: 'es'
     },
     {
-      file: 'dist/bundle.cjs.js', // CommonJS 형태로 빌드 결과
-      format: 'cjs'
+      file: 'dist/bundle.umd.js', // UMD 형태로 빌드 결과
+      format: 'umd',
+      name: 'NexusUI',
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM'
+      }
+    },
+    {
+      file: 'dist/bundle.iife.js', // IIFE 형태로 빌드 결과
+      format: 'iife',
+      name: 'NexusUI'
     }
   ],
   plugins: [PeerDepsExternalPlugin(), resolve(), commonjs(), typescript(), terser()] // 플러그인 설정
