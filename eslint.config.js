@@ -5,7 +5,7 @@ import reactPlugin from 'eslint-plugin-react';
 const config = [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
-    ignores: ['tsconfig.json', 'eslint.config.js', 'dist/**'],
+    ignores: ['tsconfig.json', 'eslint.config.js', 'dist/**', 'guide/**'],
     languageOptions: {
       parser: typescriptEslintParser,
       ecmaVersion: 2018,
