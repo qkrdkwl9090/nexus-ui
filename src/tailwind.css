@@ -57,4 +57,215 @@
   .scrollpanel-content::-webkit-scrollbar-corner {
     background: transparent;
   }
+  .toast-container {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toast-container.top {
+    top: 50px;
+  }
+
+  .toast-container.bottom {
+    bottom: 50px;
+  }
+
+  .toast {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    color: white;
+    opacity: 0;
+    transition:
+      opacity 0.5s,
+      transform 0.5s;
+    pointer-events: auto;
+    white-space: nowrap;
+    max-width: 300px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .toast-enter {
+    opacity: 1;
+  }
+
+  .toast-exit {
+    opacity: 0;
+  }
+
+  .toast.info {
+    background-color: #007bff;
+  }
+
+  .toast.success {
+    background-color: #28a745;
+  }
+
+  .toast.warning {
+    background-color: #ffc107;
+  }
+
+  .toast.error {
+    background-color: #dc3545;
+  }
+
+  .toast.top-left {
+    left: 10px;
+    align-self: flex-start;
+  }
+
+  .toast.top-right {
+    right: 10px;
+    align-self: flex-end;
+  }
+
+  .toast.top-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .toast.bottom-left {
+    left: 10px;
+    align-self: flex-start;
+  }
+
+  .toast.bottom-right {
+    right: 10px;
+    align-self: flex-end;
+  }
+
+  .toast.bottom-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInTop {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInBottom {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideOutTop {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideOutBottom {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  .toast-enter.toast.top-left,
+  .toast-enter.toast.bottom-left {
+    animation: slideInLeft 0.5s forwards;
+  }
+
+  .toast-enter.toast.top-right,
+  .toast-enter.toast.bottom-right {
+    animation: slideInRight 0.5s forwards;
+  }
+
+  .toast-enter.toast.top-center {
+    animation: slideInTop 0.5s forwards;
+  }
+
+  .toast-enter.toast.bottom-center {
+    animation: slideInBottom 0.5s forwards;
+  }
+
+  .toast-exit.toast.top-left,
+  .toast-exit.toast.bottom-left {
+    animation: slideOutLeft 0.5s forwards;
+  }
+
+  .toast-exit.toast.top-right,
+  .toast-exit.toast.bottom-right {
+    animation: slideOutRight 0.5s forwards;
+  }
+
+  .toast-exit.toast.top-center {
+    animation: slideOutTop 0.5s forwards;
+  }
+
+  .toast-exit.toast.bottom-center {
+    animation: slideOutBottom 0.5s forwards;
+  }
 }
