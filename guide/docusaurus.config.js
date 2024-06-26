@@ -28,13 +28,18 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Input Text',
+              label: 'InputText',
               docId: 'components/form/inputText'
             },
             {
               type: 'doc',
               label: 'Checkbox',
               docId: 'components/form/checkbox'
+            },
+            {
+              type: 'doc',
+              label: 'ScrollPanel',
+              docId: 'components/panel/scrollPanel'
             },
             {
               type: 'doc',

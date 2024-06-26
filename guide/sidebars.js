@@ -16,6 +16,11 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Panel',
+          items: ['components/panel/scrollPanel']
+        },
+        {
+          type: 'category',
           label: 'Misc',
           items: ['components/misc/skeleton']
         }
