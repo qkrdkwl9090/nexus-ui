@@ -38,6 +38,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Sidebar',
+              docId: 'components/overlay/sidebar'
+            },
+            {
+              type: 'doc',
               label: 'ScrollPanel',
               docId: 'components/panel/scrollPanel'
             },

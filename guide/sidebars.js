@@ -16,6 +16,11 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Overlay',
+          items: ['components/overlay/sidebar']
+        },
+        {
+          type: 'category',
           label: 'Panel',
           items: ['components/panel/scrollPanel']
         },
