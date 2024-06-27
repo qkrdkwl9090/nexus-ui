@@ -45,6 +45,11 @@ module.exports = {
               type: 'doc',
               label: 'Skeleton',
               docId: 'components/misc/skeleton'
+            },
+            {
+              type: 'doc',
+              label: 'Toast',
+              docId: 'components/messages/toast'
             }
           ]
         },

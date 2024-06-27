@@ -21,6 +21,11 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Messages',
+          items: ['components/messages/toast']
+        },
+        {
+          type: 'category',
           label: 'Misc',
           items: ['components/misc/skeleton']
         }
