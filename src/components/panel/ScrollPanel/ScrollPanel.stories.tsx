@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import ScrollPanel, { ScrollPanelProps } from './ScrollPanel';
+import ScrollPanel, { ScrollPanelProps } from './index';
 
 export default {
   title: 'Panel/ScrollPanel',

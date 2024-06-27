@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import { ToastProvider, useToast } from './Toast';
+import { ToastProvider, useToast } from './index';
 
 export default {
   title: 'Messages/Toast',

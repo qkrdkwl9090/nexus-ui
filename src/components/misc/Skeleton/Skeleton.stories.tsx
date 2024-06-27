@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Skeleton, { SkeletonProps } from './Skeleton';
+import Skeleton, { SkeletonProps } from './index';
 
 export default {
   title: 'Misc/Skeleton',

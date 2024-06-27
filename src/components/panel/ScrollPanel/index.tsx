@@ -1,4 +1,5 @@
 import React, { forwardRef, ReactNode, CSSProperties } from 'react';
+import './ScrollPanel.css';
 
 interface CustomCSSProperties extends CSSProperties {
   '--scrollbar-color'?: string;
