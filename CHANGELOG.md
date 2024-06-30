@@ -1,3 +1,42 @@
+<a name="v0.2.0"></a>
+
+## [v0.2.0] - 2024-06-30
+
+### Chore
+
+- version 0.2.0
+- set chqlog
+- **tsconfig:** set target to es2017
+
+### Docs
+
+- update README.md
+- CHANGELOG.md
+- **guide:** sidebar comp
+- **guide:** toast comp
+- **guide:** scrollPanel comp
+- **guide:** set docusaurus
+
+### Feat
+
+- **message:** add toast
+- **overlay:** add sidebar comp
+- **panel:** add scrollPanel comp
+
+### Fix
+
+- **index:** add scrollPanel, toast
+
+### Refactor
+
+- change folder structure
+
+### Pull Requests
+
+- Merge pull request [#2](y/issues/2) from qkrdkwl9090/develop
+
+<a name="v0.1.0"></a>
+
 ## v0.1.0 - 2024-06-23
 
 ### Chore
@@ -48,4 +87,5 @@
 
 - Merge pull request [#1](y/issues/1) from qkrdkwl9090/develop
 
-[Unreleased]: y/compare/v0.1.0...HEAD
+[Unreleased]: y/compare/v0.2.0...HEAD
+[v0.2.0]: y/compare/v0.1.0...v0.2.0
