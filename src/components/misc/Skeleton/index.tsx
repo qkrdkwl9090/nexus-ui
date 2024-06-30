@@ -1,4 +1,5 @@
 import React from 'react';
+import './Skeleton.css';
 
 export interface SkeletonProps {
   width?: string | number;

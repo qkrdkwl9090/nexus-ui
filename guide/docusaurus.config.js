@@ -28,7 +28,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Input Text',
+              label: 'InputText',
               docId: 'components/form/inputText'
             },
             {
@@ -38,8 +38,23 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Sidebar',
+              docId: 'components/overlay/sidebar'
+            },
+            {
+              type: 'doc',
+              label: 'ScrollPanel',
+              docId: 'components/panel/scrollPanel'
+            },
+            {
+              type: 'doc',
               label: 'Skeleton',
               docId: 'components/misc/skeleton'
+            },
+            {
+              type: 'doc',
+              label: 'Toast',
+              docId: 'components/messages/toast'
             }
           ]
         },
