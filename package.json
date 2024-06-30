@@ -1,6 +1,6 @@
 {
   "name": "@tony9090/nexus-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Each component is crafted with precision to ensure accessibility and ease of use, allowing you to enhance your application's interface with minimal effort.",
   "type": "module",
   "main": "./dist/bundle.cjs.js",
